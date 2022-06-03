@@ -7,15 +7,15 @@ Description: matute-api
 Resources: 
   GetFunction:
     Type: AWS::Serverless::Function
-    FunctionName: sam-todonts-post
+    FunctionName: matute-api-get
     Properties:
-      Handler: src/post.handler
+      Handler: src/lambdas/get.handler
       Events:
-        Post: #  Invoke on post requests to /todonts
+        Get: #  Invoke on get requests to /get
           Type: HttpApi
           Properties:
-            Path: /todonts
-            Method: post
+            Path: /get
+            Method: get
       Policies:
         - SQSSendMessagePolicy: # Use predefined IAM policy
             QueueName:
