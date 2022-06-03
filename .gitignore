@@ -1,0 +1,15 @@
+# dependencies and builds
+node_modules/
+dist/
+
+# misc
+.idea
+.DS_Store
+lerna-debug.log
+npm-debug.log
+yarn-error.log
+.eslintcache
+
+# tests
+/test
+coverage
