@@ -1,0 +1,22 @@
+// template.yml
+# Boilerplate to identify template as SAM template
+AWSTemplateFormatVersion: 2010-09-09
+Transform: AWS::Serverless-2016-10-31
+Description: matute-api
+
+Resources: 
+  GetFunction:
+    Type: AWS::Serverless::Function
+    FunctionName: sam-todonts-post
+    Properties:
+      Handler: src/post.handler
+      Events:
+        Post: #  Invoke on post requests to /todonts
+          Type: HttpApi
+          Properties:
+            Path: /todonts
+            Method: post
+      Policies:
+        - SQSSendMessagePolicy: # Use predefined IAM policy
+            QueueName:
+              Fn::GetAtt: [TodontsQueue, QueueName]
