@@ -1,0 +1,5 @@
+Run locally  - sam local invoke -e (event rout) FunctionName || sam local start-api
+Add JWT
+Integrate a third part library
+Create shared library as getJid()
+usar dns
